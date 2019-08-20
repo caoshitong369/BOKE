@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="目录[toc] 技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib impor">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Carl Enjoy Study">
-<meta property="og:url" content="http://caoshitong369.github.io/index.html">
+<meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/sql/index.html">
 <meta property="og:site_name" content="Carl Enjoy Study">
+<meta property="og:description" content="目录[toc] 技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib impor">
 <meta property="og:locale" content="zn-Hans">
+<meta property="og:updated_time" content="2019-08-20T16:32:41.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Carl Enjoy Study">
+<meta name="twitter:description" content="目录[toc] 技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib impor">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://caoshitong369.github.io/">
+  <link rel="canonical" href="http://caoshitong369.github.io/2019/08/21/sql/">
 
 
 
 
 
-  <title>Carl Enjoy Study</title>
+  <title> | Carl Enjoy Study</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,9 +309,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -338,9 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/21/sql/" itemprop="url">Untitled</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -390,21 +391,34 @@
       
 
       
-        
-          
-          目录[toc]
-技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base  
-from sqlalchemy import (MetaData, create_engine)  
-from sqlalche
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/21/sql/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[toc]</p>
+<h1 id="技术总结"><a href="#技术总结" class="headerlink" title="技术总结"></a>技术总结</h1><h2 id="flask操作原生数据库"><a href="#flask操作原生数据库" class="headerlink" title="flask操作原生数据库"></a>flask操作原生数据库</h2><h3 id="用到的包"><a href="#用到的包" class="headerlink" title="用到的包"></a>用到的包</h3><p><code>from sqlalchemy.ext.declarative import declarative_base</code>  </p>
+<p><code>from sqlalchemy import (MetaData, create_engine)</code>  </p>
+<p><code>from sqlalchemy.orm import sessionmaker</code>  </p>
+<p><code>from contextlib import contextmanager</code>  </p>
+<h3 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h3><h4 id="利用contextlib创建一个上下文管理器"><a href="#利用contextlib创建一个上下文管理器" class="headerlink" title="利用contextlib创建一个上下文管理器"></a>利用contextlib创建一个上下文管理器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file_open</span><span class="params">(path)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f_obj = open(path, <span class="string">"w"</span>)</span><br><span class="line">        <span class="keyword">yield</span> f_obj</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        print(<span class="string">"We had an error!"</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        print(<span class="string">"Closing file"</span>)</span><br><span class="line">        f_obj.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">with</span> file_open(<span class="string">"test/test.txt"</span>) <span class="keyword">as</span> fobj:</span><br><span class="line">        fobj.write(<span class="string">"Testing context managers"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在这里，我们从contextlib模块中引入contextmanager，然后装饰我们所定义的file_open函数。这就允许我们使用Python的with语句来调用file_open函数。在函数中，我们打开文件，然后通过yield，将其传递出去，最终主调函数可以使用它。</p>
+<p>一旦with语句结束，控制就会返回给file_open函数，它继续执行yield语句后面的代码。这个最终会执行finally语句–关闭文件。如果我们在打开文件时遇到了OSError错误，它就会被捕获，最终finally语句依然会关闭文件句柄。  </p>
+<h4 id="原生sql语句组合"><a href="#原生sql语句组合" class="headerlink" title="原生sql语句组合"></a>原生sql语句组合</h4><p>根据幸运值进行排名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,create_time,RANK() OVER(order by score desc) as rank from super_lotto_dk_bet_with_rank_num) as T</span><br></pre></td></tr></table></figure>
+
+<p>原生sql语句组合（sql语句+where语句+order by语句+limit语句)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">        select_sql = &apos;select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,create_time,RANK() OVER(order by score desc) as rank from super_lotto_dk_bet_with_rank_num) as T&apos;</span><br><span class="line">        where = []</span><br><span class="line">        where_sql = &apos;&apos;</span><br><span class="line">        if uid:</span><br><span class="line">            where.append(&quot;uid=&#123;&#125;&quot;.format(uid))</span><br><span class="line">        if start_time:</span><br><span class="line">            where.append(&quot;create_time &gt; &#123;&#125;&quot;.format(start_time_stamp))</span><br><span class="line">        if end_time:</span><br><span class="line">            where.append(&quot;arrive_time &lt; &#123;&#125;&quot;.format(end_time_stamp))</span><br><span class="line">        if where:</span><br><span class="line">            where_sql = &quot;WHERE &quot; + &apos; AND &apos;.join(where)</span><br><span class="line">        query_sql = &apos;&apos;.join([select_sql, where_sql, limit_sql])</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">#### 连接数据库及发送sql语句</span><br></pre></td></tr></table></figure>
+
+<p>db_engine_activity = create_engine(‘postgresql://wumingshun:<a href="mailto:qhvce0813@127.0.0.1" target="_blank" rel="noopener">qhvce0813@127.0.0.1</a>:5432/activity’,encoding=’utf-8’,convert_unicode=True,pool_recycle=60 * 5,pool_size=5,echo=False)<br>ActivityBase = declarative_base(bind=db_engine_activity)<br>ActivityMetaData = MetaData(bind=db_engine_activity)<br>activity_session = sessionmaker(bind=db_engine_activity,expire_on_commit=False)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>@contextmanager<br>def create_activity_session(): # 使用上下文管理器的方式，解决出现异常及关闭问题<br>ps = activity_session()<br>try:<br>    yield ps<br>except Exception as e:<br>    logging.error(‘数据库错误,回退:{}’.format(e))<br>    ps.rollback() # 出现异常<br>    raise e<br>finally:<br>    ps.close()</p>
+<p>@contextmanager<br>def create_activity_conn():<br>    conn = db_engine_activity.connect()<br>    try:<br>        yield conn<br>    except Exception as e:<br>        logging.error(‘数据库错误: {}’.format(e))<br>        raise e<br>    finally:<br>        conn.close()</p>
+<p>def query_dk_lotto(query_sql):<br>    with_activity_conn() as conn:<br>        rt = conn.excute(query_sql)<br>        res = rt.fetchall()<br>        return res</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### flask 利用ORM操作数据库</span><br></pre></td></tr></table></figure>
+
+<p>db_engine = create_engine(‘postgresql://wumingshun:<a href="mailto:qhvce0813@127.0.0.1" target="_blank" rel="noopener">qhvce0813@127.0.0.1</a>:5432/activity’,encoding=’utf-8’,convert_unicode=True,pool_recycle=60 * 5,pool_size=5,echo=False)<br>QHealthBase = declarative_base(bind=db_engine)<br>session = sessionmaker(bind=db_engine,expire_on_commit=False)<br>metadata = MetaData(bind=db_engine)</p>
+<p>class CoinDayCount(QHealthBase):<br>    # 如果是数据库已经把表创建好了利用autoload=True可以转化为orm语句<br>    <strong>table</strong> = Table(“coin_day_count”,metadata,autoload=True)<br><br>    # 如果数据库没有创建表可以利用orm进行创建<br>    user_table = Table(‘user’,metadata,<br>    Column(‘id’, Interger, primary_key=True)</p>
+<p>metadata.create_all()</p>
+<p>```</p>
+
       
     </div>
     
@@ -421,141 +435,28 @@ from sqlalche
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/python之集合set/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="carlcao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carl Enjoy Study">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/21/python之集合set/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:32:41+08:00">
-                2019-08-21
-              </time>
+              <a href="/2019/08/21/python之集合set/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          集合set集合是一个无序不重复元素的集。  
-创建空集合1234s=set()  s1=set([]) #列表s2=set(()) #元祖s3=set(&#123;&#125;) #字典
-
-创建非空集合12s1=set([1, 2, 3, 4])s3=set(&#123;&quot;a&quot;:
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/21/python之集合set/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -565,520 +466,11 @@ from sqlalche
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/Python Time&DateTime包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="carlcao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carl Enjoy Study">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/21/Python Time&DateTime包/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:32:41+08:00">
-                2019-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          python对时间的操作datetime的操作12345678910111213141516171819202122import datetime# 当前日期时间print(datetime.datetime.now())# 2019-08-10 09:42:10.951399# 格式化时间prin
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/21/Python Time&DateTime包/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/loan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="carlcao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carl Enjoy Study">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/21/loan/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:32:41+08:00">
-                2019-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          需求1.添加抵押币种2.编辑抵押币种技术总结：__getitem__ 返回键对应的值  
-example
-12coin_list = MarketCoin().get_coin_name(&quot;code_id&quot;)coin_list.sort(key=lambda e: e.__get
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/21/loan/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/排名sql语句/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="carlcao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carl Enjoy Study">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/21/排名sql语句/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:32:41+08:00">
-                2019-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          根据幸运值进行排名
-1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,r
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/21/排名sql语句/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/遇到的坑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="carlcao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Carl Enjoy Study">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/21/遇到的坑/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:32:41+08:00">
-                2019-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          go遇到的坑请求体问题发送post请求，请求体的内容只能读一次，如果想要读第二次，需要把内容再赋值给请求体。
-
-python遇到的坑全局变量问题多次调用一个函数，为了保证每一次函数调用全局变量都是最起始状态，需要对全局变量初始化。  
-请求头参数问题1&quot;GET /admin/users/p
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/21/遇到的坑/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1086,6 +478,10 @@ python遇到的坑全局变量问题多次调用一个函数，为了保证每�
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1106,8 +502,17 @@ python遇到的坑全局变量问题多次调用一个函数，为了保证每�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1149,6 +554,22 @@ python遇到的坑全局变量问题多次调用一个函数，为了保证每�
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术总结"><span class="nav-number">2.</span> <span class="nav-text">技术总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flask操作原生数据库"><span class="nav-number">2.1.</span> <span class="nav-text">flask操作原生数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的包"><span class="nav-number">2.1.1.</span> <span class="nav-text">用到的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细介绍"><span class="nav-number">2.1.2.</span> <span class="nav-text">详细介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用contextlib创建一个上下文管理器"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">利用contextlib创建一个上下文管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生sql语句组合"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">原生sql语句组合</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1295,6 +716,10 @@ python遇到的坑全局变量问题多次调用一个函数，为了保证每�
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
