@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="目录[toc] 技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib impor">
+<meta name="description" content="技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib import contex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Carl Enjoy Study">
+<meta property="og:title" content="技术总结">
 <meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/sql/index.html">
 <meta property="og:site_name" content="Carl Enjoy Study">
-<meta property="og:description" content="目录[toc] 技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib impor">
+<meta property="og:description" content="技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib import contex">
 <meta property="og:locale" content="zn-Hans">
-<meta property="og:updated_time" content="2019-08-20T16:32:41.042Z">
+<meta property="og:updated_time" content="2019-08-20T16:52:55.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Carl Enjoy Study">
-<meta name="twitter:description" content="目录[toc] 技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib impor">
+<meta name="twitter:title" content="技术总结">
+<meta name="twitter:description" content="技术总结flask操作原生数据库用到的包from sqlalchemy.ext.declarative import declarative_base   from sqlalchemy import (MetaData, create_engine)   from sqlalchemy.orm import sessionmaker   from contextlib import contex">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title> | Carl Enjoy Study</title>
+  <title>技术总结 | Carl Enjoy Study</title>
   
 
 
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">技术总结</h1>
         
 
         <div class="post-meta">
@@ -353,7 +353,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:32:41+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:52:55+08:00">
                 2019-08-21
               </time>
             
@@ -391,8 +391,7 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[toc]</p>
-<h1 id="技术总结"><a href="#技术总结" class="headerlink" title="技术总结"></a>技术总结</h1><h2 id="flask操作原生数据库"><a href="#flask操作原生数据库" class="headerlink" title="flask操作原生数据库"></a>flask操作原生数据库</h2><h3 id="用到的包"><a href="#用到的包" class="headerlink" title="用到的包"></a>用到的包</h3><p><code>from sqlalchemy.ext.declarative import declarative_base</code>  </p>
+        <h1 id="技术总结"><a href="#技术总结" class="headerlink" title="技术总结"></a>技术总结</h1><h2 id="flask操作原生数据库"><a href="#flask操作原生数据库" class="headerlink" title="flask操作原生数据库"></a>flask操作原生数据库</h2><h3 id="用到的包"><a href="#用到的包" class="headerlink" title="用到的包"></a>用到的包</h3><p><code>from sqlalchemy.ext.declarative import declarative_base</code>  </p>
 <p><code>from sqlalchemy import (MetaData, create_engine)</code>  </p>
 <p><code>from sqlalchemy.orm import sessionmaker</code>  </p>
 <p><code>from contextlib import contextmanager</code>  </p>
@@ -417,8 +416,7 @@
 <p>db_engine = create_engine(‘postgresql://wumingshun:<a href="mailto:qhvce0813@127.0.0.1" target="_blank" rel="noopener">qhvce0813@127.0.0.1</a>:5432/activity’,encoding=’utf-8’,convert_unicode=True,pool_recycle=60 * 5,pool_size=5,echo=False)<br>QHealthBase = declarative_base(bind=db_engine)<br>session = sessionmaker(bind=db_engine,expire_on_commit=False)<br>metadata = MetaData(bind=db_engine)</p>
 <p>class CoinDayCount(QHealthBase):<br>    # 如果是数据库已经把表创建好了利用autoload=True可以转化为orm语句<br>    <strong>table</strong> = Table(“coin_day_count”,metadata,autoload=True)<br><br>    # 如果数据库没有创建表可以利用orm进行创建<br>    user_table = Table(‘user’,metadata,<br>    Column(‘id’, Interger, primary_key=True)</p>
 <p>metadata.create_all()</p>
-<p>```</p>
-
+<pre><code></code></pre>
       
     </div>
     
@@ -442,7 +440,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/21/python之集合set/" rel="next" title>
+              <a href="/2019/08/21/Time和DateTime/" rel="next" title>
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -451,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/21/Time和DateTime/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -568,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术总结"><span class="nav-number">2.</span> <span class="nav-text">技术总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flask操作原生数据库"><span class="nav-number">2.1.</span> <span class="nav-text">flask操作原生数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的包"><span class="nav-number">2.1.1.</span> <span class="nav-text">用到的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细介绍"><span class="nav-number">2.1.2.</span> <span class="nav-text">详细介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用contextlib创建一个上下文管理器"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">利用contextlib创建一个上下文管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生sql语句组合"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">原生sql语句组合</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#技术总结"><span class="nav-number">1.</span> <span class="nav-text">技术总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flask操作原生数据库"><span class="nav-number">1.1.</span> <span class="nav-text">flask操作原生数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的包"><span class="nav-number">1.1.1.</span> <span class="nav-text">用到的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细介绍"><span class="nav-number">1.1.2.</span> <span class="nav-text">详细介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用contextlib创建一个上下文管理器"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">利用contextlib创建一个上下文管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生sql语句组合"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">原生sql语句组合</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
