@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="集合set集合是一个无序不重复元素的集。   创建空集合1234s=set()  s1=set([]) #列表s2=set(()) #元祖s3=set(&amp;#123;&amp;#125;) #字典  创建非空集合12s1=set([1, 2, 3, 4])s3=set(&amp;#123;&amp;quot;a&amp;quot;:2, &amp;quot;b&amp;quot;:3,&amp;quot;c&amp;quot;:4&amp;#125;)  注：字典转se">
+<meta name="description" content="需求：根据指定user_id递归查找下线玩家，然后根据所有的user_id查询DT余额，然后以邮件的形式发送给指定的用户。 技术支持：xlrd，xlwt, apscheduler,threading,re,datetime,logging 详细内容：xlrd: table  = data.sheet_by_index(sheet_index) 通过索引顺序获取table = data.sheet_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python集合">
-<meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/python之集合set/index.html">
+<meta property="og:title" content="脚本总结">
+<meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/脚本总结/index.html">
 <meta property="og:site_name" content="Carl Enjoy Study">
-<meta property="og:description" content="集合set集合是一个无序不重复元素的集。   创建空集合1234s=set()  s1=set([]) #列表s2=set(()) #元祖s3=set(&amp;#123;&amp;#125;) #字典  创建非空集合12s1=set([1, 2, 3, 4])s3=set(&amp;#123;&amp;quot;a&amp;quot;:2, &amp;quot;b&amp;quot;:3,&amp;quot;c&amp;quot;:4&amp;#125;)  注：字典转se">
+<meta property="og:description" content="需求：根据指定user_id递归查找下线玩家，然后根据所有的user_id查询DT余额，然后以邮件的形式发送给指定的用户。 技术支持：xlrd，xlwt, apscheduler,threading,re,datetime,logging 详细内容：xlrd: table  = data.sheet_by_index(sheet_index) 通过索引顺序获取table = data.sheet_">
 <meta property="og:locale" content="zn-Hans">
-<meta property="og:updated_time" content="2019-08-20T16:57:44.914Z">
+<meta property="og:updated_time" content="2019-08-20T16:55:14.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python集合">
-<meta name="twitter:description" content="集合set集合是一个无序不重复元素的集。   创建空集合1234s=set()  s1=set([]) #列表s2=set(()) #元祖s3=set(&amp;#123;&amp;#125;) #字典  创建非空集合12s1=set([1, 2, 3, 4])s3=set(&amp;#123;&amp;quot;a&amp;quot;:2, &amp;quot;b&amp;quot;:3,&amp;quot;c&amp;quot;:4&amp;#125;)  注：字典转se">
+<meta name="twitter:title" content="脚本总结">
+<meta name="twitter:description" content="需求：根据指定user_id递归查找下线玩家，然后根据所有的user_id查询DT余额，然后以邮件的形式发送给指定的用户。 技术支持：xlrd，xlwt, apscheduler,threading,re,datetime,logging 详细内容：xlrd: table  = data.sheet_by_index(sheet_index) 通过索引顺序获取table = data.sheet_">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://caoshitong369.github.io/2019/08/21/python之集合set/">
+  <link rel="canonical" href="http://caoshitong369.github.io/2019/08/21/脚本总结/">
 
 
 
 
 
-  <title>python集合 | Carl Enjoy Study</title>
+  <title>脚本总结 | Carl Enjoy Study</title>
   
 
 
@@ -324,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/python之集合set/">
+    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/脚本总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="carlcao">
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python集合</h1>
+          <h1 class="post-title" itemprop="name headline">脚本总结</h1>
         
 
         <div class="post-meta">
@@ -353,7 +353,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:57:44+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:55:14+08:00">
                 2019-08-21
               </time>
             
@@ -391,77 +391,20 @@
       
 
       
-        <h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3><p>集合是一个无序不重复元素的集。  </p>
-<h4 id="创建空集合"><a href="#创建空集合" class="headerlink" title="创建空集合"></a>创建空集合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s=set()  </span><br><span class="line">s1=set([]) #列表</span><br><span class="line">s2=set(()) #元祖</span><br><span class="line">s3=set(&#123;&#125;) #字典</span><br></pre></td></tr></table></figure>
-
-<h4 id="创建非空集合"><a href="#创建非空集合" class="headerlink" title="创建非空集合"></a>创建非空集合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s1=set([1, 2, 3, 4])</span><br><span class="line">s3=set(&#123;&quot;a&quot;:2, &quot;b&quot;:3,&quot;c&quot;:4&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>注</strong>：字典转set集合，需要注意的是，只取了字典的key。  </p>
-<h3 id="集合的操作"><a href="#集合的操作" class="headerlink" title="集合的操作"></a>集合的操作</h3><h4 id="集合添加"><a href="#集合添加" class="headerlink" title="集合添加"></a>集合添加</h4><p>集合的添加有两种方式，分别是<strong>add</strong>和<strong>update</strong>。但是他们在添加元素时是有区别的:  </p>
-<ul>
-<li><p>add()方法<br>把要传入的元素作为一个整体添加到集合中,如：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=set()</span><br><span class="line">s.add(&quot;carl&quot;)</span><br><span class="line">set([&quot;carl&quot;])</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>update()方法<br>把要传入的元素拆分成单个字符，存于集合中，并去掉重复的字符。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=set()</span><br><span class="line">s.update(&quot;carl&quot;)</span><br><span class="line">set([&quot;c&quot;, &quot;a&quot;, &quot;r&quot;, &quot;l&quot;])</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="集合删除"><a href="#集合删除" class="headerlink" title="集合删除"></a>集合删除</h4><p><strong>remove</strong>:如果存在则删除，不存在则报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s=set(&quot;one&quot;)</span><br><span class="line">s.remove(&quot;e&quot;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>discard</strong>:如果存在则删除，不存在则什么都不做</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = set(&quot;one&quot;)</span><br><span class="line">s.discard(&quot;e&quot;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>pop</strong>:随机删除一个元素，如果是空集合会引发<code>KeyError</code>错误<br><strong>clear</strong>:清空集合中所有元素</p>
-<h3 id="集合的其他方法"><a href="#集合的其他方法" class="headerlink" title="集合的其他方法"></a>集合的其他方法</h3><table>
-<thead>
-<tr>
-<th align="center">函数</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">len(s)</td>
-<td align="center">set的长度</td>
-</tr>
-<tr>
-<td align="center">x in s</td>
-<td align="center">测试x是否是s的成员</td>
-</tr>
-<tr>
-<td align="center">x not in s</td>
-<td align="center">测试x是否不是s的成员</td>
-</tr>
-<tr>
-<td align="center">s.issubset(t)</td>
-<td align="center">测试是否s中的每一个元素都在t中</td>
-</tr>
-<tr>
-<td align="center">s.issuperset(t)</td>
-<td align="center">测试是否t中的每一个元素都在s中</td>
-</tr>
-<tr>
-<td align="center">s.union(t)</td>
-<td align="center">返回一个新的set包含s和t中的每一个元素</td>
-</tr>
-<tr>
-<td align="center">s.intersection(t)</td>
-<td align="center">返回一个新的set包含s和t中的公共元素</td>
-</tr>
-<tr>
-<td align="center">s.difference(t)</td>
-<td align="center">返回一个新的set包含s中有但是t中没有的元素</td>
-</tr>
-<tr>
-<td align="center">s.symmetric_difference(t)</td>
-<td align="center">返回一个新的set包含s和t中不重复的元素</td>
-</tr>
-<tr>
-<td align="center">s.copy()</td>
-<td align="center">返回一个set”s”的一个浅复制</td>
-</tr>
-</tbody></table>
+        <h3 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h3><p>根据指定user_id递归查找下线玩家，然后根据所有的user_id查询DT余额，然后以邮件的形式发送给指定的用户。</p>
+<h3 id="技术支持："><a href="#技术支持：" class="headerlink" title="技术支持："></a>技术支持：</h3><p>xlrd，xlwt, apscheduler,threading,re,datetime,logging</p>
+<h3 id="详细内容："><a href="#详细内容：" class="headerlink" title="详细内容："></a>详细内容：</h3><h4 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd:"></a>xlrd:</h4><hr>
+<p>table  = data.sheet_by_index(sheet_index) 通过索引顺序获取<br>table = data.sheet_by_index(sheet_name) 通过名称获取</p>
+<h5 id="以上函数返回一个xlrd-sheet-Sheet-对象"><a href="#以上函数返回一个xlrd-sheet-Sheet-对象" class="headerlink" title="以上函数返回一个xlrd.sheet.Sheet()对象"></a>以上函数返回一个xlrd.sheet.Sheet()对象</h5><hr>
+<p>names = data.sheet_names() <code>返回book中所有工作表中的名字</code><br>data.sheet_loaded(sheet_name or index) <code>检查某个sheet是否导入完毕</code>  </p>
+<h5 id="行的操作"><a href="#行的操作" class="headerlink" title="行的操作"></a>行的操作</h5><hr>
+<p>nrows = table.nrows <code>获取该sheet中有效行数</code><br>table.row(rowx) <code>返回由该行中所有的单元格对象组成的列表</code><br>table.row_slice(rowx) <code>返回由该行中所有的单元格对象组成的列表</code><br>table.row_types(rowx, start_colx=0, end_colx=None) <code>返回由该行中所有单元格的数据类型组成的列表</code>  </p>
+<h2 id="table-row-values-rowx-start-colx-0-end-colx-None-返回由该行中所有单元格的数据组成的列表"><a href="#table-row-values-rowx-start-colx-0-end-colx-None-返回由该行中所有单元格的数据组成的列表" class="headerlink" title="table.row_values(rowx, start_colx=0, end_colx=None) 返回由该行中所有单元格的数据组成的列表  "></a>table.row_values(rowx, start_colx=0, end_colx=None) <code>返回由该行中所有单元格的数据组成的列表</code>  </h2><h5 id="列的操作和行的操作一样此处省略"><a href="#列的操作和行的操作一样此处省略" class="headerlink" title="列的操作和行的操作一样此处省略"></a>列的操作和行的操作一样此处省略</h5><hr>
+<h5 id="单元格的操作"><a href="#单元格的操作" class="headerlink" title="单元格的操作"></a>单元格的操作</h5><p>table.cell(rowx, colx) <code>返回单元格对象</code><br>table.cell_type(rowx, colx) <code>返回单元格中的数据类型</code><br>table.cell_value(rowx, colx) <code>返回单元格中的数据</code></p>
+<h5 id="打开excel文件"><a href="#打开excel文件" class="headerlink" title="打开excel文件"></a>打开excel文件</h5><p>data = xlrd.open_workbook(filename)</p>
+<h4 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h4><p>创建一个workbook 设置编码<br><code>workbook = xlwt.Workbook(encoding = &#39;utf-8&#39;)</code><br>创建一个worksheet<br><code>worksheet = workbook.add_sheet(&#39;My Worksheet&#39;)</code><br>写入excel<br>参数对应行，列，值<br><code>worksheet.write(1,0, label = &#39;this is test&#39;)</code><br>保存<br><code>workbook.save(&#39;Excel_test.xls&#39;)</code></p>
+<h4 id="threading"><a href="#threading" class="headerlink" title="threading"></a>threading</h4><p><code>t = threading.Thread(target=mul_threading_produce, args=(global_user_list,))</code><br><code>t.start()</code><br><code>t.join()</code></p>
+<h4 id="apscheduler定时框架"><a href="#apscheduler定时框架" class="headerlink" title="apscheduler定时框架"></a>apscheduler定时框架</h4><p><code>from apscheduler.schedulers.blocking import BlockingScheduler</code><br><code>sched = BlockingScheduler()</code><br><code>sched.add_job(main, &#39;interval&#39;, days=1, max_instances=5, next_run_time=datetime.now())</code><br><code>sched.start()</code></p>
 
       
     </div>
@@ -486,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/21/排名sql语句/" rel="next" title="排名sql语句">
-                <i class="fa fa-chevron-left"></i> 排名sql语句
+              <a href="/2019/08/21/sql/" rel="next" title="技术总结">
+                <i class="fa fa-chevron-left"></i> 技术总结
               </a>
             
           </div>
@@ -496,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/21/loan/" rel="prev" title="对外开放平台需求总结">
-                对外开放平台需求总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/21/遇到的坑/" rel="prev" title="遇到的坑">
+                遇到的坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -612,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合set"><span class="nav-number">1.</span> <span class="nav-text">集合set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建空集合"><span class="nav-number">1.1.</span> <span class="nav-text">创建空集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建非空集合"><span class="nav-number">1.2.</span> <span class="nav-text">创建非空集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合的操作"><span class="nav-number">2.</span> <span class="nav-text">集合的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合添加"><span class="nav-number">2.1.</span> <span class="nav-text">集合添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合删除"><span class="nav-number">2.2.</span> <span class="nav-text">集合删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合的其他方法"><span class="nav-number">3.</span> <span class="nav-text">集合的其他方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求："><span class="nav-number">1.</span> <span class="nav-text">需求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术支持："><span class="nav-number">2.</span> <span class="nav-text">技术支持：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细内容："><span class="nav-number">3.</span> <span class="nav-text">详细内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#xlrd"><span class="nav-number">3.1.</span> <span class="nav-text">xlrd:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#以上函数返回一个xlrd-sheet-Sheet-对象"><span class="nav-number">3.1.1.</span> <span class="nav-text">以上函数返回一个xlrd.sheet.Sheet()对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行的操作"><span class="nav-number">3.1.2.</span> <span class="nav-text">行的操作</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#table-row-values-rowx-start-colx-0-end-colx-None-返回由该行中所有单元格的数据组成的列表"><span class="nav-number"></span> <span class="nav-text">table.row_values(rowx, start_colx=0, end_colx=None) 返回由该行中所有单元格的数据组成的列表  </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#列的操作和行的操作一样此处省略"><span class="nav-number">0.0.1.</span> <span class="nav-text">列的操作和行的操作一样此处省略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单元格的操作"><span class="nav-number">0.0.2.</span> <span class="nav-text">单元格的操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打开excel文件"><span class="nav-number">0.0.3.</span> <span class="nav-text">打开excel文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#xlwt"><span class="nav-number">0.1.</span> <span class="nav-text">xlwt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#threading"><span class="nav-number">0.2.</span> <span class="nav-text">threading</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apscheduler定时框架"><span class="nav-number">0.3.</span> <span class="nav-text">apscheduler定时框架</span></a></li></div>
             
 
           </div>
