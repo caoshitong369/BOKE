@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="根据幸运值进行排名 1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,crea">
+<meta name="description" content="数组当中按照索引删除元素123456ips := strings.Split(Ips, &amp;quot;,&amp;quot;)for idx, ip := range ips &amp;#123;	if !utils.CheckIsIp(ip) &amp;#123;		ips = append(ips[:idx], ips[idx+1:]...)	&amp;#125;&amp;#125;  echo框架验证请求参数123456789101">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排名sql语句">
-<meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/排名sql语句/index.html">
+<meta property="og:title" content="2019-08-21 技术总结">
+<meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/go/index.html">
 <meta property="og:site_name" content="Carl Enjoy Study">
-<meta property="og:description" content="根据幸运值进行排名 1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,crea">
+<meta property="og:description" content="数组当中按照索引删除元素123456ips := strings.Split(Ips, &amp;quot;,&amp;quot;)for idx, ip := range ips &amp;#123;	if !utils.CheckIsIp(ip) &amp;#123;		ips = append(ips[:idx], ips[idx+1:]...)	&amp;#125;&amp;#125;  echo框架验证请求参数123456789101">
 <meta property="og:locale" content="zn-Hans">
-<meta property="og:updated_time" content="2019-08-20T16:56:46.113Z">
+<meta property="og:updated_time" content="2019-08-21T10:40:14.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排名sql语句">
-<meta name="twitter:description" content="根据幸运值进行排名 1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,crea">
+<meta name="twitter:title" content="2019-08-21 技术总结">
+<meta name="twitter:description" content="数组当中按照索引删除元素123456ips := strings.Split(Ips, &amp;quot;,&amp;quot;)for idx, ip := range ips &amp;#123;	if !utils.CheckIsIp(ip) &amp;#123;		ips = append(ips[:idx], ips[idx+1:]...)	&amp;#125;&amp;#125;  echo框架验证请求参数123456789101">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://caoshitong369.github.io/2019/08/21/排名sql语句/">
+  <link rel="canonical" href="http://caoshitong369.github.io/2019/08/21/go/">
 
 
 
 
 
-  <title>排名sql语句 | Carl Enjoy Study</title>
+  <title>2019-08-21 技术总结 | Carl Enjoy Study</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/排名sql语句/">
+    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/go/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="carlcao">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排名sql语句</h1>
+          <h1 class="post-title" itemprop="name headline">2019-08-21 技术总结</h1>
         
 
         <div class="post-meta">
@@ -323,7 +323,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:56:46+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T18:40:14+08:00">
                 2019-08-21
               </time>
             
@@ -361,13 +361,15 @@
       
 
       
-        <p>根据幸运值进行排名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,create_time,RANK() OVER(order by score desc) as rank from super_lotto_dk_bet_with_rank_num) as T</span><br></pre></td></tr></table></figure>
+        <h4 id="数组当中按照索引删除元素"><a href="#数组当中按照索引删除元素" class="headerlink" title="数组当中按照索引删除元素"></a>数组当中按照索引删除元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ips := strings.Split(Ips, &quot;,&quot;)</span><br><span class="line">for idx, ip := range ips &#123;</span><br><span class="line">	if !utils.CheckIsIp(ip) &#123;</span><br><span class="line">		ips = append(ips[:idx], ips[idx+1:]...)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>原生sql语句组合（sql语句+where语句+order by语句+limit语句)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select_sql = &apos;select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,create_time,RANK() OVER(order by score desc) as rank from super_lotto_dk_bet_with_rank_num) as T&apos;</span><br><span class="line">where = []</span><br><span class="line">where_sql = &apos;&apos;</span><br><span class="line">if uid:</span><br><span class="line">    where.append(&quot;uid=&#123;&#125;&quot;.format(uid))</span><br><span class="line">if start_time:</span><br><span class="line">    where.append(&quot;create_time &gt; &#123;&#125;&quot;.format(start_time_stamp))</span><br><span class="line">if end_time:</span><br><span class="line">    where.append(&quot;arrive_time &lt; &#123;&#125;&quot;.format(end_time_stamp))</span><br><span class="line">if where:</span><br><span class="line">    where_sql = &quot;WHERE &quot; + &apos; AND &apos;.join(where)</span><br><span class="line">query_sql = &apos;&apos;.join([select_sql, where_sql, limit_sql])</span><br></pre></td></tr></table></figure>
+<h4 id="echo框架验证请求参数"><a href="#echo框架验证请求参数" class="headerlink" title="echo框架验证请求参数"></a>echo框架验证请求参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">   type UserApiNewIn struct &#123;</span><br><span class="line">   	MobileVercode string `json:&quot;vercode&quot;`</span><br><span class="line">   	Ips           string `json:&quot;ips&quot;`</span><br><span class="line">   	EmailVercode  string `json:&quot;email_vercode&quot;`</span><br><span class="line">   	Scopes        string `json:&quot;scopes&quot;`</span><br><span class="line">   	Remark        string `json:&quot;remark&quot;`</span><br><span class="line">   &#125;</span><br><span class="line">args := rest.NewArgs(ctx)</span><br><span class="line">var in = new(UserApiNewIn)</span><br><span class="line">err := args.Bind(in)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">	utils.Logger.Error(&quot;获取请求数据出错&quot;, zap.Error(err))</span><br><span class="line">	return utils.FailedJsonWithCode(ctx, utils.EmptyMapData(), int32(errcode.CommonCode_InvalidParam))</span><br><span class="line">&#125;</span><br><span class="line">MobileVercode := in.MobileVercode</span><br><span class="line">EmailVercode := in.EmailVercode</span><br><span class="line">Ips := in.Ips</span><br><span class="line">Scopes := in.Scopes</span><br><span class="line">Remark := in.Remark</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rest.go</span><br><span class="line"></span><br><span class="line">func NewArgs(ctx echo.Context) (args *Args) &#123;</span><br><span class="line">	return &amp;Args&#123;</span><br><span class="line">		ctx: ctx,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">args.go</span><br><span class="line"></span><br><span class="line">func (a *Args) Bind(i interface&#123;&#125;) (err error) &#123;</span><br><span class="line">	if err = a.ctx.Bind(i); err != nil &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	if err = a.ctx.Validate(i); err != nil &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	return</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="strings-Replace"><a href="#strings-Replace" class="headerlink" title="strings.Replace"></a>strings.Replace</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scope = strings.Replace(scope, &quot; &quot;, &quot;&quot;, -1)</span><br><span class="line">如果最后一个参数n如果小于0就是全部替换</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -391,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/21/遇到的坑/" rel="next" title="遇到的坑">
-                <i class="fa fa-chevron-left"></i> 遇到的坑
+              <a href="/2019/08/21/Time和DateTime/" rel="next" title="Time和DateTime">
+                <i class="fa fa-chevron-left"></i> Time和DateTime
               </a>
             
           </div>
@@ -400,10 +402,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/21/python之集合set/" rel="prev" title="python集合">
-                python集合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +505,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组当中按照索引删除元素"><span class="nav-number">1.</span> <span class="nav-text">数组当中按照索引删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#echo框架验证请求参数"><span class="nav-number">2.</span> <span class="nav-text">echo框架验证请求参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strings-Replace"><span class="nav-number">3.</span> <span class="nav-text">strings.Replace</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
