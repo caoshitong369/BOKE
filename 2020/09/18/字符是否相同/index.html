@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="根据幸运值进行排名 1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,crea">
+<meta name="description" content="实现一个算法，确定一个字符串 s 的所有字符是否全都不同。1234567891011   func isUnique(astr string) bool &amp;#123;    length := len(astr)    for i:=0;i&amp;lt;length-1;i++ &amp;#123;        for j:=i+1;j&amp;lt;length;j++ &amp;#123;            if a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排名sql语句">
-<meta property="og:url" content="http://caoshitong369.github.io/2019/08/21/排名sql语句/index.html">
+<meta property="og:title" content="字符是否相同">
+<meta property="og:url" content="http://caoshitong369.github.io/2020/09/18/字符是否相同/index.html">
 <meta property="og:site_name" content="Carl Enjoy Study">
-<meta property="og:description" content="根据幸运值进行排名 1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,crea">
+<meta property="og:description" content="实现一个算法，确定一个字符串 s 的所有字符是否全都不同。1234567891011   func isUnique(astr string) bool &amp;#123;    length := len(astr)    for i:=0;i&amp;lt;length-1;i++ &amp;#123;        for j:=i+1;j&amp;lt;length;j++ &amp;#123;            if a">
 <meta property="og:locale" content="zn-Hans">
-<meta property="og:updated_time" content="2019-08-20T16:56:46.113Z">
+<meta property="og:updated_time" content="2020-09-18T07:57:44.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排名sql语句">
-<meta name="twitter:description" content="根据幸运值进行排名 1select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,crea">
+<meta name="twitter:title" content="字符是否相同">
+<meta name="twitter:description" content="实现一个算法，确定一个字符串 s 的所有字符是否全都不同。1234567891011   func isUnique(astr string) bool &amp;#123;    length := len(astr)    for i:=0;i&amp;lt;length-1;i++ &amp;#123;        for j:=i+1;j&amp;lt;length;j++ &amp;#123;            if a">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://caoshitong369.github.io/2019/08/21/排名sql语句/">
+  <link rel="canonical" href="http://caoshitong369.github.io/2020/09/18/字符是否相同/">
 
 
 
 
 
-  <title>排名sql语句 | Carl Enjoy Study</title>
+  <title>字符是否相同 | Carl Enjoy Study</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2019/08/21/排名sql语句/">
+    <link itemprop="mainEntityOfPage" href="http://caoshitong369.github.io/2020/09/18/字符是否相同/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="carlcao">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排名sql语句</h1>
+          <h1 class="post-title" itemprop="name headline">字符是否相同</h1>
         
 
         <div class="post-meta">
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:56:46+08:00">
-                2019-08-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-18T15:56:04+08:00">
+                2020-09-18
               </time>
             
 
@@ -361,11 +361,7 @@
       
 
       
-        <p>根据幸运值进行排名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,create_time,RANK() OVER(order by score desc) as rank from super_lotto_dk_bet_with_rank_num) as T</span><br></pre></td></tr></table></figure>
-
-<p>原生sql语句组合（sql语句+where语句+order by语句+limit语句)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select_sql = &apos;select uid,score,arrive_time,(select count(uid) from super_lotto_dk_bet_with_rank_num as lotto where lotto.uid=T.uid group by uid) as num,rank from (select uid,score,status,arrive_time,create_time,RANK() OVER(order by score desc) as rank from super_lotto_dk_bet_with_rank_num) as T&apos;</span><br><span class="line">where = []</span><br><span class="line">where_sql = &apos;&apos;</span><br><span class="line">if uid:</span><br><span class="line">    where.append(&quot;uid=&#123;&#125;&quot;.format(uid))</span><br><span class="line">if start_time:</span><br><span class="line">    where.append(&quot;create_time &gt; &#123;&#125;&quot;.format(start_time_stamp))</span><br><span class="line">if end_time:</span><br><span class="line">    where.append(&quot;arrive_time &lt; &#123;&#125;&quot;.format(end_time_stamp))</span><br><span class="line">if where:</span><br><span class="line">    where_sql = &quot;WHERE &quot; + &apos; AND &apos;.join(where)</span><br><span class="line">query_sql = &apos;&apos;.join([select_sql, where_sql, limit_sql])</span><br></pre></td></tr></table></figure>
+        <h3 id="实现一个算法，确定一个字符串-s-的所有字符是否全都不同。"><a href="#实现一个算法，确定一个字符串-s-的所有字符是否全都不同。" class="headerlink" title="实现一个算法，确定一个字符串 s 的所有字符是否全都不同。"></a>实现一个算法，确定一个字符串 s 的所有字符是否全都不同。</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">func</span> <span class="title">isUnique</span><span class="params">(astr <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    length := <span class="built_in">len</span>(astr)</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;length<span class="number">-1</span>;i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> j:=i+<span class="number">1</span>;j&lt;length;j++ &#123;</span><br><span class="line">            <span class="keyword">if</span> astr[i] == astr[j] &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -391,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/21/遇到的坑/" rel="next" title="遇到的坑">
-                <i class="fa fa-chevron-left"></i> 遇到的坑
+              <a href="/2019/08/21/go/" rel="next" title="2019-08-21 技术总结">
+                <i class="fa fa-chevron-left"></i> 2019-08-21 技术总结
               </a>
             
           </div>
@@ -400,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/21/python之集合set/" rel="prev" title="python集合">
-                python集合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +499,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现一个算法，确定一个字符串-s-的所有字符是否全都不同。"><span class="nav-number">1.</span> <span class="nav-text">实现一个算法，确定一个字符串 s 的所有字符是否全都不同。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
